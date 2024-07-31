@@ -19,7 +19,7 @@ import com.etour.main.service.Category.CategoryService;
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryMasterController {
-	 private CategoryService categoryService;
+	 private final CategoryService categoryService;
 	@Autowired
 	public CategoryMasterController(CategoryService categoryService) {
 		super();

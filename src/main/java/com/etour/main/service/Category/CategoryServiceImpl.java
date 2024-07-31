@@ -15,20 +15,20 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public List<CategoryMaster> getCategory() {
-		// TODO Auto-generated method stub
+		
 		return categoryDao.findAll();
 	}
 
 	@Override
 	public CategoryMaster findById(Integer id) {
-		// TODO Auto-generated method stub
+		
 		 Optional<CategoryMaster> result = categoryDao.findById(id);
 	        return result.orElse(null);
 	}
 
 	@Override
 	public CategoryMaster save(CategoryMaster categoryMaster) {
-		// TODO Auto-generated method stub
+		
 		return categoryDao.save(categoryMaster);
 	}
 
