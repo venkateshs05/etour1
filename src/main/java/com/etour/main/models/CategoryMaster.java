@@ -1,7 +1,4 @@
 package com.etour.main.models;
-
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -45,9 +42,6 @@ public class CategoryMaster {
 	}
 	public void setFlag(boolean flag) {
 		this.flag = flag;
-	}
-	
-	
-	
+	}	
 
 }

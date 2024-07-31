@@ -14,11 +14,13 @@ import com.etour.main.service.Category.CategoryService;
 @RequestMapping("/api/categories")
 public class Controller {
 	 private CategoryService categoryService;
+	 
 	@Autowired
 	public Controller(CategoryService categoryService) {
 		super();
 		this.categoryService = categoryService;
 	}
+	
 	 @GetMapping
 	 public List<CategoryMaster>getCategoryAll(){
 		return categoryService.getCategory();
