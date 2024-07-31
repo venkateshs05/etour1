@@ -14,5 +14,6 @@ public interface ItineraryMasterService {
     ItineraryMaster findById(Integer id);
     ItineraryMaster save(ItineraryMaster itineraryMaster);
     void deleteById(Integer id);
+    public ItineraryMaster updateById(Integer id, ItineraryMaster updatedItineraryMaster);
 }
 

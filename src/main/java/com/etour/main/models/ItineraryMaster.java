@@ -1,69 +1,57 @@
 package com.etour.main.models;
 
-
-
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "ItineraryMaster")
+@Table(name = "itinerary_master")
 public class ItineraryMaster {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ItrId")
-    private int itrId;
+    @Column(name = "itr_id")
+    private Integer itrId;
 
     @ManyToOne
-    @JoinColumn(name = "CatmasterId", nullable = false)
+    @JoinColumn(name = "catmaster_id", nullable = false)
     private CategoryMaster categoryMaster;
 
-    @Column(name = "DayNo", nullable = false)
-    private int dayNo;
+    @Column(name = "day_no")
+    private Integer dayNo;
 
-    @Column(name = "ItrDtl", length = 255)
+    @Column(name = "itr_dtl", columnDefinition = "TEXT")
     private String itrDtl;
 
-	public int getItrId() {
-		return itrId;
-	}
+    // Getters and Setters
 
-	public void setItrId(Integer itrId) {
-		this.itrId = itrId;
-	}
+    public Integer getItrId() {
+        return itrId;
+    }
 
-	public CategoryMaster getCategoryMaster() {
-		return categoryMaster;
-	}
+    public void setItrId(Integer itrId) {
+        this.itrId = itrId;
+    }
 
-	public void setCategoryMaster(CategoryMaster categoryMaster) {
-		this.categoryMaster = categoryMaster;
-	}
+    public CategoryMaster getCategoryMaster() {
+        return categoryMaster;
+    }
 
-	public int getDayNo() {
-		return dayNo;
-	}
+    public void setCategoryMaster(CategoryMaster categoryMaster) {
+        this.categoryMaster = categoryMaster;
+    }
 
-	public void setDayNo(int dayNo) {
-		this.dayNo = dayNo;
-	}
+    public Integer getDayNo() {
+        return dayNo;
+    }
 
-	public String getItrDtl() {
-		return itrDtl;
-	}
+    public void setDayNo(Integer dayNo) {
+        this.dayNo = dayNo;
+    }
 
-	public void setItrDtl(String itrDtl) {
-		this.itrDtl = itrDtl;
-	}
+    public String getItrDtl() {
+        return itrDtl;
+    }
 
-	
-
-   
+    public void setItrDtl(String itrDtl) {
+        this.itrDtl = itrDtl;
+    }
 }

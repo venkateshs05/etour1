@@ -18,27 +18,27 @@ public class CostMasterController {
 
     @GetMapping
     public List<CostMaster> getAllCosts() {
-        return costMasterService.getAllCosts();
+        return costMasterService.findAll();
     }
 
     @GetMapping("/{id}")
     public Optional<CostMaster> getCostById(@PathVariable Long id) {
-        return costMasterService.getCostById(id);
+        return costMasterService.findById(id);
     }
 
     @PostMapping
     public CostMaster createCost(@RequestBody CostMaster costMaster) {
-        return costMasterService.saveCost(costMaster);
+        return costMasterService.save(costMaster);
     }
 
-    @PutMapping("/{id}")
-    public CostMaster updateCost(@PathVariable Long id, @RequestBody CostMaster costMaster) {
-        costMaster.setCostId(id);
-        return costMasterService.saveCost(costMaster);
-    }
+//    @PutMapping("/{id}")
+//    public CostMaster updateCost(@PathVariable Long id, @RequestBody CostMaster costMaster) {
+//        costMaster.setCostId(id);
+//        return costMasterService.updateById(costMaster);
+//    }
 
     @DeleteMapping("/{id}")
     public void deleteCost(@PathVariable Long id) {
-        costMasterService.deleteCost(id);
+        costMasterService.deleteById(id);
     }
 }

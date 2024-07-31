@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CostMasterService {
-    List<CostMaster> getAllCosts();
-    Optional<CostMaster> getCostById(Long id);
-    CostMaster saveCost(CostMaster costMaster);
-    void deleteCost(Long id);
+    List<CostMaster> findAll();
+    Optional<CostMaster> findById(Long id);
+    CostMaster save(CostMaster costMaster);
+    CostMaster updateById(Long id, CostMaster updatedCostMaster);
+    void deleteById(Long id);
 }

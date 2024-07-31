@@ -1,9 +1,9 @@
 package com.etour.main.service.Category;
 
-import com.etour.main.Dao.CostMasterRepository;
-import com.etour.main.models.CostMaster;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.etour.main.Dao.CostMasterRepository;
+import com.etour.main.models.CostMaster;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,26 +11,47 @@ import java.util.Optional;
 @Service
 public class CostMasterServiceImpl implements CostMasterService {
 
+    private final CostMasterRepository costMasterRepository;
+
     @Autowired
-    private CostMasterRepository costMasterRepository;
+    public CostMasterServiceImpl(CostMasterRepository costMasterRepository) {
+        this.costMasterRepository = costMasterRepository;
+    }
 
     @Override
-    public List<CostMaster> getAllCosts() {
+    public List<CostMaster> findAll() {
         return costMasterRepository.findAll();
     }
 
     @Override
-    public Optional<CostMaster> getCostById(Long id) {
+    public Optional<CostMaster> findById(Long id) {
         return costMasterRepository.findById(id);
     }
 
     @Override
-    public CostMaster saveCost(CostMaster costMaster) {
+    public CostMaster save(CostMaster costMaster) {
         return costMasterRepository.save(costMaster);
     }
 
     @Override
-    public void deleteCost(Long id) {
+    public CostMaster updateById(Long id, CostMaster updatedCostMaster) {
+        return costMasterRepository.findById(id)
+            .map(existingCostMaster -> {
+                existingCostMaster.setCategoryMaster(updatedCostMaster.getCategoryMaster());
+                existingCostMaster.setCost(updatedCostMaster.getCost());
+                existingCostMaster.setSinglePrsnCost(updatedCostMaster.getSinglePrsnCost());
+                existingCostMaster.setExtraPrsnCost(updatedCostMaster.getExtraPrsnCost());
+                existingCostMaster.setChildWithBed(updatedCostMaster.getChildWithBed());
+                existingCostMaster.setChildWithoutBed(updatedCostMaster.getChildWithoutBed());
+                existingCostMaster.setValidFrom(updatedCostMaster.getValidFrom());
+                existingCostMaster.setValidTo(updatedCostMaster.getValidTo());
+                return costMasterRepository.save(existingCostMaster);
+            })
+            .orElseThrow(() -> new RuntimeException("CostMaster not found with id " + id));
+    }
+
+    @Override
+    public void deleteById(Long id) {
         costMasterRepository.deleteById(id);
     }
 }

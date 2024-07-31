@@ -3,43 +3,45 @@ package com.etour.main.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tour_master")
+@Table(name = "TourMaster")
 public class TourMaster {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long tourId;
+    @Column(name = "Tour_id")
+    private int tourId;
 
     @ManyToOne
-    @JoinColumn(name = "catmaster_id", nullable = false)
+    @JoinColumn(name = "Catmaster_id", referencedColumnName = "Catmaster_id", nullable = false)
     private CategoryMaster categoryMaster;
 
     @ManyToOne
-    @JoinColumn(name = "departure_id", nullable = false)
+    @JoinColumn(name = "Departure_id", referencedColumnName = "Departure_Id", nullable = false)
     private DateMaster dateMaster;
 
-	public Long getTourId() {
-		return tourId;
-	}
+    // Getters and Setters
 
-	public void setTourId(Long tourId) {
-		this.tourId = tourId;
-	}
+    public int getTourId() {
+        return tourId;
+    }
 
-	public CategoryMaster getCategoryMaster() {
-		return categoryMaster;
-	}
+    public void setTourId(int tourId) {
+        this.tourId = tourId;
+    }
 
-	public void setCategoryMaster(CategoryMaster categoryMaster) {
-		this.categoryMaster = categoryMaster;
-	}
+    public CategoryMaster getCategoryMaster() {
+        return categoryMaster;
+    }
 
-	public DateMaster getDateMaster() {
-		return dateMaster;
-	}
+    public void setCategoryMaster(CategoryMaster categoryMaster) {
+        this.categoryMaster = categoryMaster;
+    }
 
-	public void setDateMaster(DateMaster dateMaster) {
-		this.dateMaster = dateMaster;
-	}
+    public DateMaster getDateMaster() {
+        return dateMaster;
+    }
 
-    
+    public void setDateMaster(DateMaster dateMaster) {
+        this.dateMaster = dateMaster;
+    }
 }

@@ -4,6 +4,6 @@ import com.etour.main.models.*;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CategoryDao extends JpaRepository<CategoryMaster,Integer> {
+public interface CategoryMasterRepository extends JpaRepository<CategoryMaster,Integer> {
 
 }

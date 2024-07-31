@@ -40,5 +40,18 @@ public class ItineraryMasterServiceImpl implements ItineraryMasterService {
     public void deleteById(Integer id) {
         itineraryMasterRepository.deleteById(id);
     }
+    
+    @Override
+    public ItineraryMaster updateById(Integer id, ItineraryMaster updatedItineraryMaster) {
+        return itineraryMasterRepository.findById(id)
+            .map(itinerary -> {
+                // Update fields with new values
+                itinerary.setCategoryMaster(updatedItineraryMaster.getCategoryMaster());
+                itinerary.setDayNo(updatedItineraryMaster.getDayNo());
+                itinerary.setItrDtl(updatedItineraryMaster.getItrDtl());
+                return itineraryMasterRepository.save(itinerary);
+            })
+            .orElseThrow(() -> new RuntimeException("Itinerary not found with id " + id));
+    }
 }
 

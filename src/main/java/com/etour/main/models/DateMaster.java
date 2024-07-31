@@ -1,33 +1,71 @@
 package com.etour.main.models;
 
 import jakarta.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "date_master")
 public class DateMaster {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long departureId;
+    @Column(name = "departure_id")
+    private Integer departureId;
 
     @ManyToOne
     @JoinColumn(name = "catmaster_id", nullable = false)
     private CategoryMaster categoryMaster;
 
-	public Long getDepartureId() {
-		return departureId;
-	}
+    @Column(name = "depart_date", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date departDate;
 
-	public void setDepartureId(Long departureId) {
-		this.departureId = departureId;
-	}
+    @Column(name = "end_date")
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
 
-	public CategoryMaster getCategoryMaster() {
-		return categoryMaster;
-	}
+    @Column(name = "no_of_days")
+    private Integer noOfDays;
 
-	public void setCategoryMaster(CategoryMaster categoryMaster) {
-		this.categoryMaster = categoryMaster;
-	}
+    // Getters and Setters
 
-   
+    public Integer getDepartureId() {
+        return departureId;
+    }
+
+    public void setDepartureId(Integer departureId) {
+        this.departureId = departureId;
+    }
+
+    public CategoryMaster getCategoryMaster() {
+        return categoryMaster;
+    }
+
+    public void setCategoryMaster(CategoryMaster categoryMaster) {
+        this.categoryMaster = categoryMaster;
+    }
+
+    public Date getDepartDate() {
+        return departDate;
+    }
+
+    public void setDepartDate(Date departDate) {
+        this.departDate = departDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Integer getNoOfDays() {
+        return noOfDays;
+    }
+
+    public void setNoOfDays(Integer noOfDays) {
+        this.noOfDays = noOfDays;
+    }
 }
