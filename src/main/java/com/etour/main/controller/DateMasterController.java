@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/dateMaster")
+@CrossOrigin
 public class DateMasterController {
 
     private final DateMasterService dateMasterService;
@@ -26,6 +28,10 @@ public class DateMasterController {
         List<DateMaster> dateMasters = dateMasterService.findAll();
         return ResponseEntity.ok(dateMasters);
     }
+    @GetMapping("tourdates/{searchDate}")
+	public List<DateMaster> getTourDatesBetweenDepartDateAndEndDate(@PathVariable Date startDate) {
+		return dateMasterService.findByDepartDateBetween(startDate,startDate);
+	}
 
     // Get a specific DateMaster record by ID
     @GetMapping("/{id}")

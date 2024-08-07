@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/itineraries")
+@CrossOrigin(origins= "http://localhost:3000")
 public class ItineraryMasterController {
 
     private final ItineraryMasterService itineraryMasterService;
@@ -25,6 +26,10 @@ public class ItineraryMasterController {
     @GetMapping
     public List<ItineraryMaster> getAllItineraries() {
         return itineraryMasterService.findAll();
+    }
+    @GetMapping("itineraries/{categoryid}")
+    public List<ItineraryMaster> getItinerariesByCategoryId(@PathVariable int categoryid) {
+        return itineraryMasterService.getItinerariesByCategoryId(categoryid);
     }
 
     @GetMapping("/{id}")

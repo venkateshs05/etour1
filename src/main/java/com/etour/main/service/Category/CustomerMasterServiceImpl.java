@@ -51,4 +51,10 @@ public class CustomerMasterServiceImpl implements CustomerMasterService {
             throw new RuntimeException("CustomerMaster not found with id: " + id);
         }
     }
+
+	@Override
+	public Optional<CustomerMaster> findByUserNameAndPassword(String username, String password) {
+		// TODO Auto-generated method stub
+		return customerMasterRepository.findByUserNameAndPassWord(username, password);
+	}
 }

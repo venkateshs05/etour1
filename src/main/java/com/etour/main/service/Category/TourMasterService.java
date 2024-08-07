@@ -7,6 +7,7 @@ import java.util.Optional;
 public interface TourMasterService {
     List<TourMaster> findAll();
     Optional<TourMaster> findById(Integer id);
+    List<TourMaster> getTourByCategoryId(int categoryId);
     TourMaster save(TourMaster tourMaster);
     TourMaster updateById(Integer id, TourMaster updatedTourMaster);
     void deleteById(Integer id);

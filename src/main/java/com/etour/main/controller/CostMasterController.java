@@ -4,29 +4,37 @@ import com.etour.main.models.CostMaster;
 import com.etour.main.service.Category.CostMasterService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/costs")
+@RequestMapping("/api")
+@CrossOrigin(origins= "http://localhost:3000")
 public class CostMasterController {
 
     @Autowired
     private CostMasterService costMasterService;
 
-    @GetMapping
+    @GetMapping("/costs")
     public List<CostMaster> getAllCosts() {
         return costMasterService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/cost/{id}")
     public Optional<CostMaster> getCostById(@PathVariable Long id) {
         return costMasterService.findById(id);
     }
+    
+    @GetMapping("/cost/subCatId/{id}")
+    public List<CostMaster> findBySubCategoryId(@PathVariable Long id) {
+        return costMasterService.findBySubCategoryId(id);
+	    
+    }
 
-    @PostMapping
+    @PostMapping("/costs")
     public CostMaster createCost(@RequestBody CostMaster costMaster) {
         return costMasterService.save(costMaster);
     }
@@ -37,8 +45,9 @@ public class CostMasterController {
 //        return costMasterService.updateById(costMaster);
 //    }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/costs/{id}")
     public void deleteCost(@PathVariable Long id) {
         costMasterService.deleteById(id);
     }
+    
 }

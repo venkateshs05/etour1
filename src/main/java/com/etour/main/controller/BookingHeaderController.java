@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/booking-headers")
+@CrossOrigin
+@RequestMapping("/api/booking")
 public class BookingHeaderController {
 
     private final BookingHeaderService bookingHeaderService;

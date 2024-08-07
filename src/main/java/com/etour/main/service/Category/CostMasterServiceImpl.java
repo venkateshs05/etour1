@@ -1,9 +1,12 @@
 package com.etour.main.service.Category;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import com.etour.main.Dao.CostMasterRepository;
 import com.etour.main.models.CostMaster;
+
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +40,7 @@ public class CostMasterServiceImpl implements CostMasterService {
     public CostMaster updateById(Long id, CostMaster updatedCostMaster) {
         return costMasterRepository.findById(id)
             .map(existingCostMaster -> {
-                existingCostMaster.setCategoryMaster(updatedCostMaster.getCategoryMaster());
+                
                 existingCostMaster.setCost(updatedCostMaster.getCost());
                 existingCostMaster.setSinglePrsnCost(updatedCostMaster.getSinglePrsnCost());
                 existingCostMaster.setExtraPrsnCost(updatedCostMaster.getExtraPrsnCost());
@@ -54,4 +57,13 @@ public class CostMasterServiceImpl implements CostMasterService {
     public void deleteById(Long id) {
         costMasterRepository.deleteById(id);
     }
+
+	@Override
+	public List<CostMaster> findBySubCategoryId(Long subCategoryId) {
+		// TODO Auto-generated method stub
+		return costMasterRepository.findBySubCategoryId(subCategoryId);
+		
+	}
+    
+
 }

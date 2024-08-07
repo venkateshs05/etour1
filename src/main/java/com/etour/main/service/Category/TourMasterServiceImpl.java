@@ -51,4 +51,10 @@ public class TourMasterServiceImpl implements TourMasterService {
             throw new RuntimeException("TourMaster not found with id: " + id);
         }
     }
+
+	@Override
+	public List<TourMaster> getTourByCategoryId(int categoryId) {
+		// TODO Auto-generated method stub
+		return tourMasterRepository.getTourByCategoryId(categoryId);
+	}
 }

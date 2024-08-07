@@ -21,13 +21,13 @@ public class BookingHeader {
     @JoinColumn(name = "cust_id", nullable = false)
     private CustomerMaster customerMaster;
 
-    @ManyToOne
-    @JoinColumn(name = "tour_id", nullable = false)
-    private TourMaster tourMaster;
-
-    @ManyToOne
-    @JoinColumn(name = "departure_id", nullable = false)
-    private DateMaster dateMaster;
+//    @ManyToOne
+//    @JoinColumn(name = "tour_id", nullable = false)
+//    private TourMaster tourMaster;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "departure_id", nullable = false)
+//    private DateMaster dateMaster;
 
     @Column(name = "no_of_pax", nullable = false)
     private Integer noOfPax;
@@ -67,21 +67,21 @@ public class BookingHeader {
         this.customerMaster = customerMaster;
     }
 
-    public TourMaster getTourMaster() {
-        return tourMaster;
-    }
-
-    public void setTourMaster(TourMaster tourMaster) {
-        this.tourMaster = tourMaster;
-    }
-
-    public DateMaster getDateMaster() {
-        return dateMaster;
-    }
-
-    public void setDateMaster(DateMaster dateMaster) {
-        this.dateMaster = dateMaster;
-    }
+//    public TourMaster getTourMaster() {
+//        return tourMaster;
+//    }
+//
+//    public void setTourMaster(TourMaster tourMaster) {
+//        this.tourMaster = tourMaster;
+//    }
+//
+//    public DateMaster getDateMaster() {
+//        return dateMaster;
+//    }
+//
+//    public void setDateMaster(DateMaster dateMaster) {
+//        this.dateMaster = dateMaster;
+//    }
 
     public Integer getNoOfPax() {
         return noOfPax;
@@ -114,4 +114,9 @@ public class BookingHeader {
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

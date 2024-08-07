@@ -53,5 +53,11 @@ public class ItineraryMasterServiceImpl implements ItineraryMasterService {
             })
             .orElseThrow(() -> new RuntimeException("Itinerary not found with id " + id));
     }
+
+	@Override
+	public List<ItineraryMaster> getItinerariesByCategoryId(int categoryMaster) {
+		
+		return itineraryMasterRepository.getItinerariesByCategoryId(categoryMaster);
+	}
 }
 

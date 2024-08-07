@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface CustomerMasterService {
     List<CustomerMaster> findAll();
+    Optional<CustomerMaster> findByUserNameAndPassword(String username, String password);
     Optional<CustomerMaster> findById(Integer id);
     CustomerMaster save(CustomerMaster customerMaster);
     CustomerMaster updateById(Integer id, CustomerMaster updatedCustomerMaster);

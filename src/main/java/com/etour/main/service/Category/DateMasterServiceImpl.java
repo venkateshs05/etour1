@@ -5,6 +5,7 @@ import com.etour.main.Dao.DateMasterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,4 +52,10 @@ public class DateMasterServiceImpl implements DateMasterService {
             throw new RuntimeException("DateMaster not found with id: " + id);
         }
     }
+
+	@Override
+	public List<DateMaster> findByDepartDateBetween(Date startDate, Date endDate) {
+		// TODO Auto-generated method stub
+		return dateMasterRepository.findByDepartDateBetween(startDate, endDate);
+	}
 }

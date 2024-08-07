@@ -1,5 +1,7 @@
 package com.etour.main.service.Category;
 
+import com.etour.main.models.CategoryMaster;
+import com.etour.main.models.CostMaster;
 import com.etour.main.models.SubCategoryMaster;
 import com.etour.main.Dao.SubCategoryMasterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,4 +53,26 @@ public class SubCategoryMasterServiceImpl implements SubCategoryMasterService {
             throw new RuntimeException("SubCategoryMaster not found with id: " + id);
         }
     }
+//    @Override
+//    public List<SubCategoryMaster> findAllByCategoryId(Long categoryId) {
+//        return subCategoryMasterRepository.findAllByCategoryId(categoryId);
+//    }
+
+	@Override
+	public List<SubCategoryMaster> findAllByCategoryId(Long categoryId) {
+		// TODO Auto-generated method stub
+		return subCategoryMasterRepository.findAllByCategoryId(categoryId);
+	}
+
+//	@Override
+//	public List<SubCategoryMaster> findAllCostBySubCategoryId(Long subCategoryId) {
+//		// TODO Auto-generated method stub
+//		return subCategoryMasterRepository.findAllCostBySubCategoryId(subCategoryId);
+//	}
+	@Override
+	public List<CostMaster> findCostsBySubCategoryId(Long subCategoryId) {
+	    return subCategoryMasterRepository.findCostsBySubCategoryId(subCategoryId);
+	}
+
+
 }

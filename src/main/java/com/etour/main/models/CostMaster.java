@@ -39,6 +39,20 @@ public class CostMaster {
     @Column(name = "valid_to")
     @Temporal(TemporalType.DATE)
     private Date validTo;
+    
+
+    
+    public SubCategoryMaster getSubCategoryMaster() {
+		return subCategoryMaster;
+	}
+
+	public void setSubCategoryMaster(SubCategoryMaster subCategoryMaster) {
+		this.subCategoryMaster = subCategoryMaster;
+	}
+
+	@ManyToOne
+    @JoinColumn(name = "sub_category_id")
+    private SubCategoryMaster subCategoryMaster;
 
     // Getters and Setters
 

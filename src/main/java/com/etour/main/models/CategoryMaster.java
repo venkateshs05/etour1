@@ -1,10 +1,15 @@
 package com.etour.main.models;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
@@ -28,9 +33,54 @@ public class CategoryMaster {
 
     @Column(name = "flag", nullable = false)
     private boolean flag;
+    
+//    @OneToMany(mappedBy = "categoryMaster")
+//    private Set<SubCategoryMaster> subCategories;
+//    @OneToMany(mappedBy = "categoryMaster")
+//    private Set<ItineraryMaster> itineraries;
+//    @OneToMany(mappedBy = "categoryMaster")
+//	private Set<DateMaster> dates;
+//    @OneToMany(mappedBy = "categoryMaster")
+//	private Set<CostMaster> costs;
+//    @OneToMany(mappedBy = "categoryMaster")
+//	private Set<TourMaster> tours;
+    
+    
+//    public Set<SubCategoryMaster> getSubCategories() { return subCategories; }
+//    public void setSubCategories(Set<SubCategoryMaster> subCategories) { this.subCategories = subCategories; }
+
+//	public Set<ItineraryMaster> getItineraries() {
+//		return itineraries;
+//	}
+//	public void setItineraries(Set<ItineraryMaster> itineraries) {
+//		this.itineraries = itineraries;
+//	}
+//
+//	public Set<DateMaster> getDates() {
+//		return dates;
+//	}
+//	public void setDates(Set<DateMaster> dates) {
+//		this.dates = dates;
+//	}
+//
+//	public Set<CostMaster> getCosts() {
+//		return costs;
+//	}
+//	public void setCosts(Set<CostMaster> costs) {
+//		this.costs = costs;
+//	}
+//
+//	public Set<TourMaster> gettours() {
+//		return tours;
+//	}
+//	public void setTours(Set<TourMaster> tours) {
+//		this.tours = tours;
+//	}
 
     // Getters and setters
 
+    
+    
     public int getCatmaster_id() {
         return catmaster_id;
     }

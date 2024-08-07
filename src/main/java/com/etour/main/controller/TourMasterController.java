@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/tourMaster")
+@CrossOrigin
 public class TourMasterController {
 
     private final TourMasterService tourMasterService;
@@ -33,6 +34,10 @@ public class TourMasterController {
         Optional<TourMaster> tourMaster = tourMasterService.findById(id);
         return tourMaster.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+    @GetMapping("tours/{categoryId}")
+	public List<TourMaster> getAllTours(@PathVariable int categoryId) {
+		return tourMasterService.getTourByCategoryId(categoryId);
+	}
 
     // Create a new TourMaster record
     @PostMapping

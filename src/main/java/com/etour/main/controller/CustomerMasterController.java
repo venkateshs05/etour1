@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/customers")
+@CrossOrigin
 public class CustomerMasterController {
 
     private final CustomerMasterService customerMasterService;
@@ -33,6 +34,11 @@ public class CustomerMasterController {
         Optional<CustomerMaster> customer = customerMasterService.findById(id);
         return customer.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+    @GetMapping("/customer/login/{username}/{password}")   // used to get the customer id if the valid user has passed proper username and password 
+	public Optional<CustomerMaster> getCustomerUsingUserNameAndPassword(@PathVariable String username, @PathVariable String password )
+	{
+		return customerMasterService.findByUserNameAndPassword(username, password);
+	}
 
     // Create a new customer
     @PostMapping

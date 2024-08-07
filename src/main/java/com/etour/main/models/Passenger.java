@@ -14,7 +14,7 @@ public class Passenger {
     private int paxId;
 
     @ManyToOne
-    @JoinColumn(name = "booking_id", referencedColumnName = "booking_id", nullable = false)
+    @JoinColumn(name = "booking_id", referencedColumnName = "booking_id", nullable = true)
     private BookingHeader bookingHeader;
 
     @Column(name = "pax_name", nullable = false)
