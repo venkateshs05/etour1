@@ -20,8 +20,14 @@ const Slider = () => {
     <div>
       <section className="home" id="home">
         <div className="content">
-          <h3>adventure is worthwhile</h3>
-          <p>discover new places with us, adventure awaits</p>
+          <h4>Embark on a journey of a lifetime</h4>
+          <p> Every path leads to new experiences</p>
+
+
+
+
+
+
           {/* <a href="#" className="btn">
             discover more
           </a> */}
@@ -48,7 +54,7 @@ const Slider = () => {
 
         <div className="video-container">
           <video
-            src="images/images/vid-1.mp4"
+            src="vid-1.mp4"
             id="video-slider"
             loop
             autoPlay

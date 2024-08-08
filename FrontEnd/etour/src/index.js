@@ -16,6 +16,7 @@ import PackageMaster from './Components/PackageMaster';
 import CostMasterDetails from './Components/CostMasterDetails';
 import Passenger from './Components/Passenger';
 import Booking from './Components/Booking';
+import CostItinerary from './Components/CostItinerary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,6 +39,8 @@ root.render(
           {/* <Route path="/bycostMasterId/:catMasterId" element={<Booking />} /> */}
           <Route path='/login/:pkgId' element={<LoginForm />} /> 
           <Route path="/bypassenger/:catid" element={<Passenger />} />  
+          <Route path="/bypkgId/:subCat_id" element={<CostItinerary />} />  
+        
       
 
           

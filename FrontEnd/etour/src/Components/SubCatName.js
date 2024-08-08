@@ -102,7 +102,7 @@ export function SubCatName() {
           
           <Col md={5} key={post.subCat_id}>
             <Card className="box" style={{ width: '30rem' }}>
-              <Card.Img variant="top" src="images/p-1.jpg" alt={post.subCat_name} />
+              <Card.Img variant="top" src={`Public/ ${post.sub_cat_image_path}`} alt={post.subCat_name} />
               <Card.Body className="content">
                 <Card.Title>
                   <FontAwesomeIcon icon={faMapMarkerAlt} />
@@ -127,7 +127,7 @@ export function SubCatName() {
                     </div>
                   ))}
                 {/* <Button variant="primary" href="#" className="btn" onClick={()=>navigate(`/bypkgId/${category.subCatId}`)}> */}
-                <Button onClick={()=>navigate(`/bypkgId/${post.subCat_id}`)}>View Details</Button>
+                <Button onClick={()=>navigate(`/bypkgId/${post.subCat_id}`)}>Book Tour</Button>
                   {/* Book Now
                 </Button> */}
               </Card.Body>

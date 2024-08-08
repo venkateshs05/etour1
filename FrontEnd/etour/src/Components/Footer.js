@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer style={styles.footer}>
             <h2>VishvYatra</h2>
-            <h6>Sagar City, Adheri west, Mumbai 400049</h6>
+            <h6>Sagar City, Andheri west, Mumbai 400049</h6>
             <h6>Tel.: (+91 22)  1234 5678</h6>
 
 

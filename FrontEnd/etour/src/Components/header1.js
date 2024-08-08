@@ -48,7 +48,7 @@ function Header() {
                 <NavDropdown.Item as={Link} to="/new-tours">New Tours</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/custom-tours">Custom Tours</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} to="/videos">Videos</Nav.Link>
+              {/* <Nav.Link as={Link} to="/videos">Videos</Nav.Link> */}
               <Nav.Link as={Link} to="/Packages">Packages</Nav.Link>
               <Nav.Link as={Link} to="/contactUs">Contact Us</Nav.Link>
               <Nav.Link as={Link} to="/Register">
@@ -68,14 +68,14 @@ function Header() {
             )}
             
             </Nav>
-            <Form className="d-flex ml-auto">
+            {/* <Form className="d-flex ml-auto">
               <FormControl
                 type="text"
                 placeholder="Search Tours"
                 className="mr-sm-2"
               />
               <Button variant="outline-light">Search</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>

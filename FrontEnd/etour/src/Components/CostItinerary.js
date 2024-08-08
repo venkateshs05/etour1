@@ -17,16 +17,16 @@ export function Card() {
   }, []); // Empty dependency array to ensure it runs only once when the component mounts
 
   const handleButtonClick = (category) => {
-    try {
+     try {
       // Check the flag value
       console.log(category.flag);
-      if (category.flag === "true") { // Use === for strict comparison
+      if (category.flag == 0) { // Use === for strict comparison
         // Redirect to /category/:categoryId if flag is 'true'
         console.log(category.catmaster_id);
-        navigate(/category/${category.catmaster_id});
+        navigate(`/bypakage/${category.catmaster_id}`);
       } else {
         // Redirect to /bycatId/:categoryId if flag is not 'true'
-        navigate(/categories/${category.catmaster_id});
+        navigate(`/categories/${category.catmaster_id}`);
         console.log("hekko");
       }
     } catch (error) {
