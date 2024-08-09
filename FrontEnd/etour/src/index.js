@@ -32,6 +32,7 @@ root.render(
           <Route path="/About" element={<About />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/bypkgId/:catid" element={<BookingPage />} /> 
           <Route path="/categories/:subCatId" element={<SubCatName />} />
           {/* <Route path="/bypkgId/:catMasterId" element={<PackageMaster />} />  */}
           <Route path="/bypakage/:catMasterId" element={<PackageMaster />} />
@@ -41,7 +42,7 @@ root.render(
           {/* <Route path="/bycostMasterId/:catMasterId" element={<Booking />} /> */}
           <Route path='/login/:pkgId' element={<LoginForm />} /> 
           <Route path="/bypassenger/:catid" element={<Passenger />} />  
-          <Route path="/bypkgId/:subCat_id" element={<BookingPage />} />  
+           
          
       
 

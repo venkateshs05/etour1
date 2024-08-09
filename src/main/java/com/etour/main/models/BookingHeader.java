@@ -13,12 +13,16 @@ public class BookingHeader {
     @Column(name = "booking_id")
     private Long bookingId;
 
-    @Column(name = "booking_date", nullable = false)
+    public BookingHeader() {
+    	this.bookingDate = new Date();
+	}
+
+	@Column(name = "booking_date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date bookingDate;
 
     @ManyToOne
-    @JoinColumn(name = "cust_id", nullable = false)
+    @JoinColumn(name = "cust_id", nullable = true)
     private CustomerMaster customerMaster;
 
 //    @ManyToOne
@@ -29,16 +33,16 @@ public class BookingHeader {
 //    @JoinColumn(name = "departure_id", nullable = false)
 //    private DateMaster dateMaster;
 
-    @Column(name = "no_of_pax", nullable = false)
+    @Column(name = "no_of_pax", nullable = true)
     private Integer noOfPax;
 
-    @Column(name = "tour_amount", nullable = false, precision = 10, scale = 2)
+    @Column(name = "tour_amount", nullable = true, precision = 10, scale = 2)
     private BigDecimal tourAmount;
 
     @Column(name = "taxes", precision = 10, scale = 2)
     private BigDecimal taxes;
 
-    @Column(name = "total_amount", nullable = false, precision = 10, scale = 2)
+    @Column(name = "total_amount", nullable = true, precision = 10, scale = 2)
     private BigDecimal totalAmount;
 
     // Getters and Setters
