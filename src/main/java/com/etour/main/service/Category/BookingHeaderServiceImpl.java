@@ -51,4 +51,14 @@ public class BookingHeaderServiceImpl implements BookingHeaderService {
             throw new RuntimeException("BookingHeader not found with id: " + id);
         }
     }
+
+	@Override
+	public boolean existsById(Long id) {
+		if (bookingHeaderRepository.existsById(id)) {
+			return true;
+        } else {
+        	return false;
+        }
+		
+	}
 }

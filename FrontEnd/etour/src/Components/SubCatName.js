@@ -45,6 +45,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import {Row ,Col} from 'react-bootstrap'
+import './subCatName.css';
 
 // import { NavLink } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'; // Make sure to import the Button component
@@ -90,59 +91,56 @@ export function SubCatName() {
       });
   }, []);
   
-  console.log(posts);
+
 
   return (
     <div>
-        <div>
+    <div>
         <h1 align="center" style={{ color: 'red' }}>Tours</h1>
-      <Row md={12}>
-        {posts.map(post => (
-    
-          
-          <Col md={5} key={post.subCat_id}>
-            <Card className="box" style={{ width: '30rem' }}>
-              <Card.Img variant="top" src={`Public/ ${post.sub_cat_image_path}`} alt={post.subCat_name} />
-              <Card.Body className="content">
-                <Card.Title>
-                  <FontAwesomeIcon icon={faMapMarkerAlt} />
-                  {post.subCat_name}
-                </Card.Title>
-                <Card.Text>
-                {post.description || 'place description is not found'} 
-                </Card.Text>
-                <div className="stars">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStarRegular} />
-                </div>
-                {cost
-                  .filter(costItem => costItem.subCategoryMaster.subCat_id == post.subCat_id) // Ensure costs match the post
-                  .map(costItem => (
-                    <div className="price" key={costItem.costId}>
-                     
-                      <span>$ {costItem.cost}</span>
-                    </div>
-                  ))}
-                {/* <Button variant="primary" href="#" className="btn" onClick={()=>navigate(`/bypkgId/${category.subCatId}`)}> */}
-                <Button onClick={()=>navigate(`/bypkgId/${post.subCat_id}`)}>Book Tour</Button>
-                  {/* Book Now
-                </Button> */}
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+        <Row md={12}>
+            {posts.map(post => (
+                <Col md={4} key={post.subCat_id}>
+                    <Card className="box" style={{ width: '30rem' }}>
+                        <div className="img-container">
+                            <Card.Img 
+                                variant="top" 
+                                src={post.subCatImagePath} 
+                                alt={post.subCat_name} 
+                            />
+                        </div>
+                        <Card.Body className="content">
+                            <Card.Title>
+                                <FontAwesomeIcon icon={faMapMarkerAlt} />
+                                {post.subCat_name}
+                            </Card.Title>
+                            <Card.Text>
+                                {post.description || 'Place description is not found'} 
+                            </Card.Text>
+                            <div className="stars">
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStarRegular} />
+                            </div>
+                            {cost
+                                .filter(costItem => costItem.subCategoryMaster.subCat_id == post.subCat_id)
+                                .map(costItem => (
+                                    <div className="price" key={costItem.costId}>
+                                        <span>$ {costItem.cost}</span>
+                                    </div>
+                                ))}
+                            <Button onClick={() => navigate(`/bypkgId/${post.subCat_id}`)}>
+                                Book Tour
+                            </Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            ))}
+        </Row>
     </div>
+</div>
 
-      
-    
-
-
-
-    </div>
   );
 }
 
