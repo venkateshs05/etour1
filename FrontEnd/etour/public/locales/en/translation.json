@@ -1,0 +1,21 @@
+{
+    "company_name": "VishvYatra",
+    "address": "Sagar City, Andheri west, Mumbai 400049",
+    "telephone": "Tel.: (+91 22) 1234 5678",
+    "copyright": "© 2024 Your Company. All rights reserved.",
+    "login_title": "Login",
+    "username_label": "Username",
+    "username_placeholder": "Enter your username",
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
+    "login_button": "Login",
+    "go_to_registration": "Go to Registration",
+    "login_success": "User Logged In successfully!",
+    "login_failure": "No user found. Please Enter Valid Credentials.",
+    "Registration Form": "Registration form"
+    
+  }
+  
+  
+  
+  

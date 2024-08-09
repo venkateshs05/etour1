@@ -1,14 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { t } = useTranslation(); // Initialize the useTranslation hook
+
     return (
         <footer style={styles.footer}>
-            <h2>VishvYatra</h2>
-            <h6>Sagar City, Andheri west, Mumbai 400049</h6>
-            <h6>Tel.: (+91 22)  1234 5678</h6>
-
-
-            <p>© 2024 Your Company. All rights reserved.</p>
+            <h2>{t('company_name')}</h2>
+            <h6>{t('address')}</h6>
+            <h6>{t('telephone')}</h6>
+            <p>{t('copyright')}</p>
         </footer>
     );
 };
