@@ -11,4 +11,6 @@ public interface BookingHeaderService {
     BookingHeader save(BookingHeader bookingHeader);
     BookingHeader updateById(Long id, BookingHeader updatedBookingHeader);
     void deleteById(Long id);
+	
+	boolean existsById(Long id);
 }

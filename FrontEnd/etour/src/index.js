@@ -17,6 +17,8 @@ import CostMasterDetails from './Components/CostMasterDetails';
 import Passenger from './Components/Passenger';
 import Booking from './Components/Booking';
 import CostItinerary from './Components/CostItinerary';
+import BookingPage from './Components/BookingPage';
+import OrderPage from './Components/OrderPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -34,13 +36,13 @@ root.render(
           {/* <Route path="/bypkgId/:catMasterId" element={<PackageMaster />} />  */}
           <Route path="/bypakage/:catMasterId" element={<PackageMaster />} />
           <Route path="/Packages" element={<PackageMaster />} />
-          {/* <Route path="/bycostMasterId/:catMasterId" element={<CostMasterDetails />} />  */}
-          <Route path="/bycostMasterId/:catid" element={<Passenger />} /> 
+          <Route path="/bycostMasterId/:catMasterId" element={<CostMasterDetails />} /> 
+          {/* <Route path="/bycostMasterId/:catid" element={<Passenger />} />  */}
           {/* <Route path="/bycostMasterId/:catMasterId" element={<Booking />} /> */}
           <Route path='/login/:pkgId' element={<LoginForm />} /> 
           <Route path="/bypassenger/:catid" element={<Passenger />} />  
-          <Route path="/bypkgId/:subCat_id" element={<CostItinerary />} />  
-        
+          <Route path="/bypkgId/:subCat_id" element={<BookingPage />} />  
+         
       
 
           
@@ -60,6 +62,8 @@ root.render(
           <Route path="/bybooking/:pkgId" element={<Booking />} /> 
           <Route path="/Registration" element={<RegFormComp />} /> 
           <Route path="/email" element={<OrderPage />} />  */}
+          <Route path="/success-page" element={<OrderPage />} />   
+
         </Route>
       </Routes>
     </BrowserRouter>
