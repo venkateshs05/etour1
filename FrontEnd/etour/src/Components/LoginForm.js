@@ -29,7 +29,7 @@ function LoginForm() {
       if (result === '') { // if login failed empty string returned
         alert(t('login_failure')); // Use translation for failure message
       } else {
-        alert(t('login_success')); // Use translation for success message
+        alert("!!! User Logged In successfully !!!");
         sessionStorage.setItem("uid", result.custId);
         const storedCustId = sessionStorage.getItem("uid");
         console.log("User ID:", storedCustId);

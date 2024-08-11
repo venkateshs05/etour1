@@ -68,6 +68,7 @@ export function SubCatName() {
       .then(result => {
         console.log('Posts fetched:', result);
         setposts(result);
+        console.log('Posts fetched:', posts.subCat_id);
       })
       .catch(error => {
         console.error('Error fetching posts:', error);

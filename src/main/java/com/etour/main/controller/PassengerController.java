@@ -47,13 +47,23 @@ public class PassengerController {
 //        return ResponseEntity.ok(savedPassenger);
 //    }
     
+//    @PostMapping
+//    public ResponseEntity<?> addPassenger(@RequestBody Passenger passenger) {
+//        try {
+//            // Allow adding passengers without booking
+//            
+//            passengerService.save(passenger);
+//            return ResponseEntity.ok().body(passenger);
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+//        }
+//    }
+    
     @PostMapping
-    public ResponseEntity<?> addPassenger(@RequestBody Passenger passenger) {
+    public ResponseEntity<?> addPassengers(@RequestBody List<Passenger> passengers) {
         try {
-            // Allow adding passengers without booking
-            passenger.setBookingHeader(null);
-            passengerService.save(passenger);
-            return ResponseEntity.ok().body(passenger);
+            List<Passenger> savedPassengers = passengerService.saveAll(passengers);
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedPassengers);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
