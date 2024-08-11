@@ -11,7 +11,7 @@ i18n
   .use(initReactI18next) // Pass the i18n instance to react-i18next
   .init({
     supportedLngs: ['en', 'fr', 'es', 'de','hi'], // List all supported languages
-    fallbackLng: 'en', // Default language if translation is missing
+    fallbackLng: 'hi', // Default language if translation is missing
     debug: true,
     interpolation: {
       escapeValue: false, // React already escapes by default
