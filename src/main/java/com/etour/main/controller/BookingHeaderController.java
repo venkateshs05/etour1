@@ -46,7 +46,7 @@ public class BookingHeaderController {
     @PutMapping("/{id}")
     public ResponseEntity<BookingHeader> updateBookingHeader(@PathVariable Long id, @RequestBody BookingHeader bookingHeader) {
         // Check if the booking exists
-        if (bookingHeaderService.existsById(id)) {
+        if (bookingHeaderService .existsById(id)) {
             return ResponseEntity.notFound().build();
         }
 

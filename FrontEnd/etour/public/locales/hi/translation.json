@@ -1,0 +1,16 @@
+{
+    "company_name": "वॉयज मोंडियल",
+    "address": "सागर सिटी, अंधेरी वेस्ट, मुंबई 400049",
+    "telephone": "टेल.: (+91 22) 1234 5678",
+    "copyright": "© 2024 आपकी कंपनी. सर्वाधिकार सुरक्षित.",
+    "login_title": "लॉगिन",
+    "username_label": "उपयोगकर्ता नाम",
+    "username_placeholder": "अपना उपयोगकर्ता नाम दर्ज करें",
+    "password_label": "पासवर्ड",
+    "password_placeholder": "अपना पासवर्ड दर्ज करें",
+    "login_button": "लॉगिन",
+    "go_to_registration": "पंजीकरण के लिए जाएं",
+    "login_success": "उपयोगकर्ता सफलतापूर्वक लॉग इन हुआ!",
+    "login_failure": "कोई उपयोगकर्ता नहीं मिला। कृपया मान्य जानकारी दर्ज करें।",
+    "Registration Form": "पंजीकरण फॉर्म"
+}

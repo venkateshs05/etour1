@@ -17,6 +17,7 @@ const LanguageSelector = () => {
         <option value="fr">Français</option>
         <option value="es">Español</option>
         <option value="de">Deutsch</option>
+        <option value="hi">Hindi</option>
       </select>
     </div>
   );
