@@ -58,6 +58,10 @@ public class PassengerServiceImpl implements PassengerService {
             throw new RuntimeException("Passenger not found with id: " + id);
         }
     }
+    @Override
+    public List<Passenger> saveAll(List<Passenger> passengers) {
+        return passengerRepository.saveAll(passengers);
+    }
 
 //	@Override
 //	public void updatePassengerWithBooking(Integer passengerId, Integer bookingId) {
@@ -75,6 +79,7 @@ public class PassengerServiceImpl implements PassengerService {
 //}
 //		
 //	}
+    
 
 
 	

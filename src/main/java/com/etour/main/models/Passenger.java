@@ -17,13 +17,13 @@ public class Passenger {
     @JoinColumn(name = "booking_id", referencedColumnName = "booking_id", nullable = true)
     private BookingHeader bookingHeader;
 
-    @Column(name = "pax_name", nullable = false)
+    @Column(name = "pax_name", nullable = true)
     private String paxName;
 
     @Column(name = "pax_birthdate")
     private Date paxBirthdate;
 
-    @Column(name = "pax_type", nullable = false)
+    @Column(name = "pax_type", nullable = true)
     private String paxType;
 
     @Column(name = "pax_amount")

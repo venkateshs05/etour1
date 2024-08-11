@@ -42,11 +42,24 @@ public class BookingHeaderController {
         return ResponseEntity.ok(savedBookingHeader);
     }
 
-    // Update an existing booking header by ID
+//    // Update an existing booking header by ID
+//    @PutMapping("/{id}")
+//    public ResponseEntity<BookingHeader> updateBookingHeader(@PathVariable Long id, @RequestBody BookingHeader bookingHeader) {
+//        // Check if the booking exists
+//        if (bookingHeaderService .existsById(id)) {
+//            return ResponseEntity.notFound().build();
+//        }
+//
+//        // Perform the update
+//        BookingHeader updatedBookingHeader = bookingHeaderService.updateById(id, bookingHeader);
+//        return ResponseEntity.ok(updatedBookingHeader);
+//    }
+    
+    
     @PutMapping("/{id}")
     public ResponseEntity<BookingHeader> updateBookingHeader(@PathVariable Long id, @RequestBody BookingHeader bookingHeader) {
-        // Check if the booking exists
-        if (bookingHeaderService .existsById(id)) {
+        // Check if the booking does not exist
+        if (!bookingHeaderService.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
 

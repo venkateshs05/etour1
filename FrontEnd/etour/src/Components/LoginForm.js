@@ -28,6 +28,7 @@ function LoginForm() {
         alert('No user found. Please Enter Valid Credentials.');
       } else {
         alert("!!! User Logged In successfully !!!");
+        console.log(result.custId);
         sessionStorage.setItem("uid", result.custId);
         const storedCustId = sessionStorage.getItem("uid");
         console.log("User ID:", storedCustId);
