@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/itineraries")
-@CrossOrigin(origins= "http://localhost:3000")
+@CrossOrigin
 public class ItineraryMasterController {
 
     private final ItineraryMasterService itineraryMasterService;

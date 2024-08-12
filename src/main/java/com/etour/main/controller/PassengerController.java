@@ -16,7 +16,7 @@ import javax.management.relation.RoleInfoNotFoundException;
 
 @RestController
 @RequestMapping("/api/passengers")
-@CrossOrigin(origins= "http://localhost:3000")
+@CrossOrigin
 public class PassengerController {
 
     private final PassengerService passengerService;
@@ -38,6 +38,12 @@ public class PassengerController {
     public ResponseEntity<Passenger> getPassengerById(@PathVariable Integer id) {
         Optional<Passenger> passenger = passengerService.findById(id);
         return passenger.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+    
+    @GetMapping("/booking/{bookingId}")
+    public ResponseEntity<List<Passenger>> getPassengersByBookingId(@PathVariable Long bookingId) {
+        List<Passenger> passengers = passengerService.getPassengersByBookingId(bookingId);
+        return ResponseEntity.ok(passengers);
     }
 
     // Create a new passenger
