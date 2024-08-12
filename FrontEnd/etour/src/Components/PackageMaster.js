@@ -36,6 +36,7 @@ function PackageMaster() {
       .then(result => {
         console.log('DateMaster fetched:', result);
         setDate([result]);
+        sessionStorage.setItem("did", result.departureId);
       })
       .catch(error => console.error('Error fetching dateMaster:', error));
   }, [catMasterId]);

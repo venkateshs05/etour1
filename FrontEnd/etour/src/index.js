@@ -39,7 +39,7 @@ root.render(
           <Route path="/Packages" element={<PackageMaster />} />
           <Route path="/bycostMasterId/:catMasterId" element={<CostMasterDetails />} /> 
           {/* <Route path="/bycostMasterId/:catid" element={<Passenger />} />  */}
-          {/* <Route path="/bycostMasterId/:catMasterId" element={<Booking />} /> */}
+          <Route path="/success-page"  element={<Booking />} />
           <Route path='/login/:pkgId' element={<LoginForm />} /> 
           <Route path="/bypassenger/:catid" element={<Passenger />} />  
            

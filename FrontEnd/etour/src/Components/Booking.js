@@ -27,7 +27,7 @@ function Booking({ bookingId }) {
         console.log(custId);
         console.log(pkgId);
         const [ departureResponse, customerResponse, paxResponse, sumResponse] = await Promise.all([
-         fetch("https://localhost:8080/api/Date/"+sessionStorage.getItem("did")),
+         fetch("http://localhost:8080/api/dateMaster/"+sessionStorage.getItem("did")),
          fetch("https://localhost:8080/api/Customer/"+custId),
          fetch("https://localhost:8080/pass/count/"+custId),
          fetch("https://localhost:8080/pass/total/"+custId)

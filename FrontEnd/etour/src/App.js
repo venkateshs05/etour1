@@ -3,8 +3,8 @@ import './App.css';
 
 import {Botton,Container,Row,Col} from 'react-bootstrap'
 import Header from './Components/header1';
-import Home from './Pages/Home';
-import RegFormComp from './Components/RegFormComp';
+//import Home from './Pages/Home';
+//import RegFormComp from './Components/RegFormComp';
 import Slider from './Components/Slider';
 import Crawling from './Components/Crawling';
 import { Outlet } from 'react-router-dom';
@@ -22,7 +22,7 @@ function App() {
       
       <div> <Crawling /></div>
      
-      <div class="ref"><Outlet /></div>
+      <div className="ref"><Outlet /></div>
       <Footer />
     
     
