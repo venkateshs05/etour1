@@ -25,11 +25,6 @@ const Slider = () => {
           <h4>{t('Embark on a journey of a lifetime')}</h4>
           <p> {t('Every path leads to new experiences')}</p>
 
-
-
-
-
-
           {/* <a href="#" className="btn">
             discover more
           </a> */}
@@ -54,7 +49,7 @@ const Slider = () => {
 
         <div className="video-container">
           <video
-            src="vid-1.mp4"
+            src="WhatsApp Video 2024-08-11 at 17.00.40_194e1dba.mp4"
             id="video-slider"
             loop
             autoPlay
