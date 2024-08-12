@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './Slider.css';
 import {Button} from 'react-bootstrap'; 
 import { useNavigate } from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 
 const Slider = () => {
+  const{t} = useTranslation();
   const [activeBtn, setActiveBtn] = useState(0);
   const navigate = useNavigate();
   const handleBtnClick = (index, src) => {
@@ -20,13 +22,8 @@ const Slider = () => {
     <div>
       <section className="home" id="home">
         <div className="content">
-          <h4>Embark on a journey of a lifetime</h4>
-          <p> Every path leads to new experiences</p>
-
-
-
-
-
+          <h4>{t('Embark on a journey of a lifetime')}</h4>
+          <p> {t('Every path leads to new experiences')}</p>
 
           {/* <a href="#" className="btn">
             discover more
@@ -34,9 +31,7 @@ const Slider = () => {
           {/* <Button variant="primary" onClick={() => navigate(`/Home`)}>
           discover more
           </Button> */}
-          <Button variant="primary" onClick={handleButtonClick}>
-          discover more
-          </Button>
+          <Button variant="primary" onClick={handleButtonClick}>{t('discover more')}</Button>
         </div>
 
         <div className="controls">
@@ -54,7 +49,7 @@ const Slider = () => {
 
         <div className="video-container">
           <video
-            src="vid-1.mp4"
+            src="WhatsApp Video 2024-08-11 at 17.00.40_194e1dba.mp4"
             id="video-slider"
             loop
             autoPlay

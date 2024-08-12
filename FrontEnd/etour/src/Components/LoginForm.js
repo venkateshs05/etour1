@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Form, Button, Row, Col, Card } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import './LoginForm.css'; // Import custom CSS
 
 function LoginForm() {
+  const { t } = useTranslation(); // Initialize the useTranslation hook
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const catid = sessionStorage.getItem("catid");
@@ -25,7 +27,7 @@ function LoginForm() {
       const result = await response.json();
 
       if (result === '') { // if login failed empty string returned
-        alert('No user found. Please Enter Valid Credentials.');
+        alert(t('login_failure')); // Use translation for failure message
       } else {
         alert("!!! User Logged In successfully !!!");
         sessionStorage.setItem("uid", result.custId);
@@ -33,11 +35,10 @@ function LoginForm() {
         console.log("User ID:", storedCustId);
 
         if (catid === null) {
-          alert('No user found. Please Enter Valid Credentials.');
+          alert(t('login_failure'));
           navigate('/');
         } else {
           navigate(`/bypassenger/${catid}`);
-          // navigate(`/`);
         }
       }
     } catch (error) {
@@ -52,13 +53,13 @@ function LoginForm() {
           <Col md={6} lg={4}>
             <Card className="shadow-lg rounded">
               <Card.Body>
-                <Card.Title className="text-center mb-4">Login</Card.Title>
+                <Card.Title className="text-center mb-4">{t('login_title')}</Card.Title>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group className="mb-3" controlId="formUsername">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>{t('username_label')}</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter your username"
+                      placeholder={t('username_placeholder')}
                       value={username}
                       onChange={handleUsernameChange}
                       required
@@ -67,10 +68,10 @@ function LoginForm() {
                   </Form.Group>
                   
                   <Form.Group className="mb-3" controlId="formPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>{t('password_label')}</Form.Label>
                     <Form.Control
                       type="password"
-                      placeholder="Enter your password"
+                      placeholder={t('password_placeholder')}
                       value={password}
                       onChange={handlePasswordChange}
                       required
@@ -79,7 +80,7 @@ function LoginForm() {
                   </Form.Group>
                   
                   <Button variant="primary" type="submit" className="w-100 mb-2 login-button">
-                    Login
+                    {t('login_button')}
                   </Button>
                   
                   <Button 
@@ -87,7 +88,7 @@ function LoginForm() {
                     onClick={() => navigate(`/Register`)}
                     className="w-100 text-center d-block"
                   >
-                    Go to Registration
+                    {t('go_to_registration')}
                   </Button>
                 </Form>
               </Card.Body>

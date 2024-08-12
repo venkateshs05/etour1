@@ -1,16 +1,16 @@
-import React ,{useState}from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
+//import{useNavigate} from "react-router-dom";
 import './Header.css'; // Ensure this path is correct
 
 import SearchDropdown from './SearchDropdown';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Home from '../Pages/Home';
-
-
-
+import { useTranslation } from 'react-i18next';
 
 function Header() {
-    const [isLoggedin, setIsLoggedin] = useState(false); // Manage login state
+  const [isLoggedin, setIsLoggedin] = useState(false); // Manage login state
+  const{t} = useTranslation();
 
   // Function to toggle login state
   const toggleLoginState = () => {
@@ -25,9 +25,8 @@ function Header() {
   };
   return (
     <>
-      
-      
-      <Navbar bg="dark" variant="dark"  expand="lg">
+    
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand >
             <img
@@ -40,33 +39,30 @@ function Header() {
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/Home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/About">About</Nav.Link>
-             
-              <NavDropdown title="Tours" id="tours-dropdown">
-                <NavDropdown.Item as={Link} to="/popular-tours" >Popular Tours</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/new-tours">New Tours</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/custom-tours">Custom Tours</NavDropdown.Item>
+              <Nav.Link as={Link} to="/Home">{t('Home')}</Nav.Link>
+              <Nav.Link as={Link} to="/About">{t('About')}</Nav.Link>
+              {/* <button onClick={() => navigate("/About")}>About Us</button> */}
+              
+              <NavDropdown title={t("Tours")} id="tours-dropdown">
+                <NavDropdown.Item as={Link} to="/popular-tours" >{t('Popular Tours')}</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/new-tours">{t('New Tours')}</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/custom-tours">{t('Custom Tours')}</NavDropdown.Item>
               </NavDropdown>
               {/* <Nav.Link as={Link} to="/videos">Videos</Nav.Link> */}
-              <Nav.Link as={Link} to="/Packages">Packages</Nav.Link>
-              <Nav.Link as={Link} to="/contactUs">Contact Us</Nav.Link>
-              <Nav.Link as={Link} to="/Register">
-              Register
-            </Nav.Link>
-            {isLoggedin ? ( // Conditionally render based on login state
-              <>
-                <Nav.Link as={Link} to="/" onClick={handleLogout}>Logout</Nav.Link>
-                <NavDropdown title="Search" id="basic-nav-dropdown">
-                  <SearchDropdown/>
-                </NavDropdown>
-              </>
-            ) : (
-              <Nav.Link as={Link} to="/login" onClick={toggleLoginState}>
-                Login
-              </Nav.Link>
-            )}
-            
+              <Nav.Link as={Link} to="/Packages">{t('Packages')}</Nav.Link>
+              <Nav.Link as={Link} to="/contactUs">{t('Contact Us')}</Nav.Link>
+              <Nav.Link as={Link} to="/Register">{t('Register')}</Nav.Link>
+              {isLoggedin ? ( // Conditionally render based on login state
+                <>
+                  <Nav.Link as={Link} to="/" onClick={handleLogout}>{('Logout')}</Nav.Link>
+                  <NavDropdown title="Search" id="basic-nav-dropdown">
+                    <SearchDropdown />
+                  </NavDropdown>
+                </>
+              ) : (
+                <Nav.Link as={Link} to="/login" onClick={toggleLoginState}>{t('Login')}</Nav.Link>
+              )}
+
             </Nav>
             {/* <Form className="d-flex ml-auto">
               <FormControl
@@ -79,8 +75,8 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      
-      
+
+
       {/* <div className="banner-container">
         <img
           src="https://via.placeholder.com/1920x300?text=Banner" // Update with your banner image path
@@ -89,7 +85,7 @@ function Header() {
         />
       </div> */}
     </>
-    
+
   );
 }
 

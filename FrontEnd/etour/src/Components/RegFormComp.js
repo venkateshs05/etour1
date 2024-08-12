@@ -5,8 +5,11 @@ import Row from 'react-bootstrap/Row';
 import './RegFormComp.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next'; // Import useTranslation
+
 
 function RegFormComp() {
+  const { t } = useTranslation(); // Initialize the useTranslation hook
   const [customer, setCustomer] = useState({});
   let navigate = useNavigate();
 
@@ -40,16 +43,16 @@ function RegFormComp() {
   return (
     <div className='container my-5'>
       <Form onSubmit={handleSubmit} className='p-4 border rounded shadow-sm bg-light'>
-        <h2 className='text-center text-primary mb-4'>Registration Form</h2>
+        <h2 className='text-center text-primary mb-4'>{t('Registration Form')}</h2>
 
         <Row className="mb-3">
           <Col md={6}>
             <Form.Group controlId="formFirstName">
-              <Form.Label className="text-secondary">Full Name</Form.Label>
+              <Form.Label className="text-secondary">{t('Full Name')}</Form.Label>
               <Form.Control 
                 type="text" 
                 name="custName" 
-                placeholder="First name" 
+                placeholder={t("Full Name" )}
                 onChange={handleChange} 
                 required 
               />
@@ -73,11 +76,11 @@ function RegFormComp() {
         <Row className="mb-3">
           <Col>
             <Form.Group controlId="formEmail">
-              <Form.Label className="text-secondary">Email</Form.Label>
+              <Form.Label className="text-secondary">{t('Email')}</Form.Label>
               <Form.Control 
                 type="email" 
                 name="email" 
-                placeholder="Enter email" 
+                placeholder={t("Email")}
                 onChange={handleChange} 
                 required 
               />
@@ -88,11 +91,11 @@ function RegFormComp() {
         <Row className="mb-3">
           <Col md={6}>
             <Form.Group controlId="formAge">
-              <Form.Label className="text-secondary">Age</Form.Label>
+              <Form.Label className="text-secondary">{t('Age')}</Form.Label>
               <Form.Control 
                 type="text" 
                 name="age" 
-                placeholder="Enter age" 
+                placeholder={t("Age")} 
                 onChange={handleChange} 
                 required 
                 min="18" 
@@ -103,7 +106,7 @@ function RegFormComp() {
 
           <Col md={6}>
             <Form.Group controlId="formGender">
-              <Form.Label className="text-secondary">Gender</Form.Label>
+              <Form.Label className="text-secondary">{t('Gender')}</Form.Label>
               <Form.Control 
                 as="select" 
                 name="gender" 
@@ -111,7 +114,7 @@ function RegFormComp() {
                 required
               >
                 <option value="">Select Gender</option>
-                <option value="male">Male</option>
+                <option value="male">{t('Male')}</option>
                 <option value="female">Female</option>
                 <option value="transgender">Transgender</option>
               </Form.Control>
@@ -122,11 +125,11 @@ function RegFormComp() {
         <Row className="mb-3">
           <Col md={6}>
             <Form.Group controlId="formCountryCode">
-              <Form.Label className="text-secondary">Country Code</Form.Label>
+              <Form.Label className="text-secondary">{t("Country Code")}</Form.Label>
               <Form.Control 
                 type="number" 
                 name="conteryCode" 
-                placeholder="Enter Code" 
+                placeholder={t("Country Code" )}
                 onChange={handleChange} 
                 required 
                 min="1" 
@@ -142,7 +145,7 @@ function RegFormComp() {
                 type="tel" 
                 name="mobileNo" 
                 pattern="[0-9]{10}" 
-                placeholder="Enter Number" 
+                placeholder={t("Contact Number" )}
                 onChange={handleChange} 
                 required 
               />
@@ -153,12 +156,12 @@ function RegFormComp() {
         <Row className="mb-3">
           <Col md={6}>
             <Form.Group controlId="formAadhaar">
-              <Form.Label className="text-secondary">Aadhaar Number</Form.Label>
+              <Form.Label className="text-secondary">{t('Verification')}</Form.Label>
               <Form.Control 
                 type="tel" 
                 name="adharNo" 
                 pattern="[0-9]{12}" 
-                placeholder="Enter Aadhaar Number" 
+                placeholder={t("Verification" )}
                 onChange={handleChange} 
                 required 
               />
@@ -169,11 +172,11 @@ function RegFormComp() {
         <Row className="mb-3">
           <Col>
             <Form.Group controlId="formAddress">
-              <Form.Label className="text-secondary">Address</Form.Label>
+              <Form.Label className="text-secondary">{t('Address')}</Form.Label>
               <Form.Control 
                 type="text" 
                 name="address" 
-                placeholder="Enter Address" 
+                placeholder={t("Address" )}
                 onChange={handleChange} 
                 required 
               />
@@ -184,11 +187,11 @@ function RegFormComp() {
         <Row className="mb-3">
           <Col md={6}>
             <Form.Group controlId="formUsername">
-              <Form.Label className="text-secondary">Create Username</Form.Label>
+              <Form.Label className="text-secondary">{t('Create Username')}</Form.Label>
               <Form.Control 
                 type="text" 
                 name="userName" 
-                placeholder="Enter Username" 
+                //placeholder={t("Create Username")} 
                 onChange={handleChange} 
                 required 
               />
@@ -197,11 +200,11 @@ function RegFormComp() {
 
           <Col md={6}>
             <Form.Group controlId="formPassword">
-              <Form.Label className="text-secondary">Create Password</Form.Label>
+              <Form.Label className="text-secondary"> {t('Password')}</Form.Label>
               <Form.Control 
                 type="password" 
                 name="passWord" 
-                placeholder="Enter Password" 
+                placeholder={t(" Password" )}
                 onChange={handleChange} 
                 required 
               />
