@@ -14,6 +14,10 @@ public class ItineraryMaster {
     @ManyToOne
     @JoinColumn(name = "catmaster_id", nullable = false)
     private CategoryMaster categoryMaster;
+    
+    @ManyToOne
+    @JoinColumn(name = "sub_catmaster_id", nullable = false)
+    private SubCategoryMaster subCategoryMaster;
 
     @Column(name = "day_no")
     private Integer dayNo;
@@ -37,6 +41,13 @@ public class ItineraryMaster {
 
     public void setCategoryMaster(CategoryMaster categoryMaster) {
         this.categoryMaster = categoryMaster;
+    }
+    public SubCategoryMaster getSubCategoryMaster() {
+        return subCategoryMaster;
+    }
+
+    public void setSubCategoryMaster(SubCategoryMaster subCategoryMaster) {
+        this.subCategoryMaster = subCategoryMaster;
     }
 
     public Integer getDayNo() {

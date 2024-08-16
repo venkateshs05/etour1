@@ -22,6 +22,12 @@ public class SubCategoryMaster {
     @ManyToOne
     @JoinColumn(name = "cat_id", referencedColumnName = "cat_id", nullable = false)
     private CategoryMaster categoryMaster;
+    
+    @OneToMany(mappedBy = "subCategoryMaster")
+    private Set<DateMaster> dateMasters;
+    
+    @OneToMany(mappedBy = "subCategoryMaster")
+    private Set<ItineraryMaster> itineraryMasters;
 
     @Column(name = "sub_cat_name")
     private String subCatName;

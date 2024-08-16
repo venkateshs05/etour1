@@ -8,7 +8,7 @@ export function Card() {
 
   useEffect(() => {
     // Fetch category data from the API when the component mounts
-    fetch('http://localhost:8080/api/categories')
+    fetch('http://localhost:8080/api/categories/bycatId/Main')
       .then(res => res.json())
       .then(result => setPosts(result))
       .catch(error => {
@@ -23,10 +23,10 @@ export function Card() {
       if (category.flag == 0) { // Use === for strict comparison
         // Redirect to /category/:categoryId if flag is 'true'
         console.log(category.catmaster_id);
-        navigate(`/bypakage/${category.catmaster_id}`);
+        navigate(`/bypakage/${category.cat_id}`);
       } else {
         // Redirect to /bycatId/:categoryId if flag is not 'true'
-        navigate(`/categories/${category.catmaster_id}`);
+        navigate(`/categories/${category.cat_id}`);
         console.log("hekko");
       }
     } catch (error) {

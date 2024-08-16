@@ -15,6 +15,10 @@ public class DateMaster {
     @ManyToOne
     @JoinColumn(name = "catmaster_id", nullable = false)
     private CategoryMaster categoryMaster;
+    
+    @ManyToOne
+    @JoinColumn(name = "sub_cat_id", nullable = false)
+    private SubCategoryMaster subCategoryMaster;
 
     @Column(name = "depart_date", nullable = false)
     @Temporal(TemporalType.DATE)
@@ -35,6 +39,13 @@ public class DateMaster {
 
     public void setDepartureId(Integer departureId) {
         this.departureId = departureId;
+    }
+    public SubCategoryMaster getSubCategoryMaster() {
+        return subCategoryMaster;
+    }
+
+    public void setSubCategoryMaster(SubCategoryMaster subCategoryMaster) {
+        this.subCategoryMaster = subCategoryMaster;
     }
 
     public CategoryMaster getCategoryMaster() {

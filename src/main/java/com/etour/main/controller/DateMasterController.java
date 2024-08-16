@@ -39,6 +39,11 @@ public class DateMasterController {
         Optional<DateMaster> dateMaster = dateMasterService.findById(id);
         return dateMaster.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+    
+    @GetMapping("/subcategory/{subCategoryId}")
+    public List<DateMaster> getDatesBySubCategoryId(@PathVariable Integer subCategoryId) {
+        return dateMasterService.getDatesBySubCategoryId(subCategoryId);
+    }
 
     // Create a new DateMaster record
     @PostMapping

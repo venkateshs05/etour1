@@ -38,6 +38,10 @@ public class CategoryServiceImpl implements CategoryService {
 		categoryMasterRepository.deleteById(id);
 		
 	}
+	
+	public List<CategoryMaster> getCategoriesByCatId(String catId) {
+        return categoryMasterRepository.findByCatId(catId);
+    }
 
 	
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.etour.main.models.CategoryMaster;
@@ -35,6 +36,10 @@ public class CategoryMasterController {
 		return categoryService.getCategory();
 		 
 	 }
+	 @GetMapping("/bycatId/{catId}")
+	    public List<CategoryMaster> getCategories(@PathVariable String catId) {
+	        return categoryService.getCategoriesByCatId(catId);
+	    }
 	 @GetMapping("/{id}")
 	    public ResponseEntity<CategoryMaster> getCategoryById(@PathVariable Integer id) {
 	        CategoryMaster category = categoryService.findById(id);

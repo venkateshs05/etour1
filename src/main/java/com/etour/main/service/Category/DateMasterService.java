@@ -13,4 +13,5 @@ public interface DateMasterService {
     DateMaster save(DateMaster dateMaster);
     DateMaster updateById(Integer id, DateMaster updatedDateMaster);
     void deleteById(Integer id);
+    List<DateMaster> getDatesBySubCategoryId(Integer subCategoryId);
 }

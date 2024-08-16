@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "CategoryMaster", uniqueConstraints = @UniqueConstraint(columnNames = {"cat_id"}))
+@Table(name = "CategoryMaster")
 public class CategoryMaster {
 
     @Id
@@ -22,7 +22,7 @@ public class CategoryMaster {
     @Column(name = "catmaster_id", nullable = false, updatable = false)
     private int catmaster_id;
 
-    @Column(name = "cat_id", nullable = false, unique = true, length = 50)
+    @Column(name = "cat_id", nullable = false, length = 50)
     private String cat_id;
 
     @Column(name = "cat_name", nullable = false, length = 100)

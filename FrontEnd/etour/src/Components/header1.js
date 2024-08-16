@@ -56,7 +56,7 @@ function Header() {
                 <>
                   <Nav.Link as={Link} to="/" onClick={handleLogout}>{('Logout')}</Nav.Link>
                   <NavDropdown title="Search" id="basic-nav-dropdown">
-                    <SearchDropdown />
+                    {/* <SearchDropdown /> */}
                   </NavDropdown>
                 </>
               ) : (

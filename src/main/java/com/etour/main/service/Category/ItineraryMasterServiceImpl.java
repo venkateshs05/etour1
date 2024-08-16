@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.etour.main.Dao.ItineraryMasterRepository;
 import com.etour.main.models.ItineraryMaster;
+import com.etour.main.models.SubCategoryMaster;
 
 import java.util.List;
 import java.util.Optional;
@@ -59,5 +60,8 @@ public class ItineraryMasterServiceImpl implements ItineraryMasterService {
 		
 		return itineraryMasterRepository.getItinerariesByCategoryId(categoryMaster);
 	}
+	public List<ItineraryMaster> getItinerariesBySubCategory(SubCategoryMaster subCategoryMaster) {
+        return itineraryMasterRepository.findBySubCategoryMaster(subCategoryMaster);
+    }
 }
 

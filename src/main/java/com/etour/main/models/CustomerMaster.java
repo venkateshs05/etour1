@@ -17,7 +17,7 @@ public class CustomerMaster {
     @Column(name = "cust_details", columnDefinition = "TEXT")
     private String custDetails;
 
-    @Column(name = "username", length = 20)
+    @Column(name = "username", length = 20 ,unique=true)
     private String userName;
 
     @Column(name = "password", length = 20)

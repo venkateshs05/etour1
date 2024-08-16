@@ -33,7 +33,7 @@ root.render(
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/bypkgId/:catid" element={<BookingPage />} /> 
-          <Route path="/categories/:subCatId" element={<SubCatName />} />
+          <Route path="/categories/:cat_id" element={<SubCatName />} />
           {/* <Route path="/bypkgId/:catMasterId" element={<PackageMaster />} />  */}
           <Route path="/bypakage/:catMasterId" element={<PackageMaster />} />
           <Route path="/Packages" element={<PackageMaster />} />

@@ -35,11 +35,7 @@ public class SubCategoryController {
     public Optional<SubCategoryMaster> findById(@PathVariable Integer  subCatId){
     	return subCategoryMasterService.findById(subCatId);
     }
-//    @GetMapping("/subCategories/{categoryId}")
-//    public List<SubCategoryMaster> getSubCategoriesByCategoryId(@PathVariable Long categoryId) {
-//    	   return subCategoryMasterService.findAll();
-////        return subCategoryMasterService.findByCategoryId(categoryId);
-//    }
+    
     
     @GetMapping("byCategory/{categoryId}")
     public List<SubCategoryMaster> getSubCategoriesByCategoryId(@PathVariable Long categoryId) {

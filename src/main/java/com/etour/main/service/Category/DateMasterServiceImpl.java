@@ -58,4 +58,8 @@ public class DateMasterServiceImpl implements DateMasterService {
 		// TODO Auto-generated method stub
 		return dateMasterRepository.findByDepartDateBetween(startDate, endDate);
 	}
+	@Override
+	public List<DateMaster> getDatesBySubCategoryId(Integer subCategoryId) {
+        return dateMasterRepository.findBySubCategoryMaster_SubCatId(subCategoryId);
+    }
 }

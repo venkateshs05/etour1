@@ -73,6 +73,8 @@ public class SubCategoryMasterServiceImpl implements SubCategoryMasterService {
 	public List<CostMaster> findCostsBySubCategoryId(Long subCategoryId) {
 	    return subCategoryMasterRepository.findCostsBySubCategoryId(subCategoryId);
 	}
+	
+	
 
 
 }

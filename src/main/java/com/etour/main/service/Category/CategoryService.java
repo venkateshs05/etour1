@@ -10,6 +10,7 @@ public interface CategoryService {
 	CategoryMaster findById(Integer id);
     CategoryMaster save(CategoryMaster categoryMaster);
     void deleteById(Integer id);
+    List<CategoryMaster> getCategoriesByCatId(String catId);
 	
 	
 

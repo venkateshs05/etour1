@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.etour.main.models.ItineraryMaster;
+import com.etour.main.models.SubCategoryMaster;
 import com.etour.main.service.Category.ItineraryMasterService;
 
 import java.util.List;
@@ -40,6 +41,14 @@ public class ItineraryMasterController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    
+    @GetMapping("/subCategory/{subCatId}")
+    public List<ItineraryMaster> getItinerariesBySubCategory(@PathVariable Integer subCatId) {
+        SubCategoryMaster subCategoryMaster = new SubCategoryMaster();
+        subCategoryMaster.setSubCat_id(subCatId);
+        
+        return itineraryMasterService.getItinerariesBySubCategory(subCategoryMaster);
     }
 
     @PostMapping
